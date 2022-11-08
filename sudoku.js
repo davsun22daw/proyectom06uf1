@@ -31,7 +31,7 @@ function començarJoc() {
     generarTaula(taula);
     //Mostrar el boto per comprovar
     id("chequeo").classList.remove("hidden");
-    id("sol").classList.remove("hidden");
+    id("solucion").classList.remove("hidden");
 }
 
 
@@ -85,6 +85,17 @@ function generarTaula(taula) {
                 }
             });
         }
+
+        id("solucion").addEventListener("click", function() {
+            let taulasolucio;
+            if (id("dif1").checked) taulasolucio = facil[1];
+            else if (id("dif2").checked) taulasolucio = intermig[1];
+            else taulasolucio = dificil[1];
+            netejarTaules();
+            generarTaula(taulasolucio);
+            
+        });
+        
         //asignar id al quadre
         quadre.setAttribute("id", idCount);
         idCount++;
@@ -139,7 +150,6 @@ function comprovarCompleta() {
     console.log("Has guanyat!!");
     return true;
 }
-console.log("Has guanyat!!");
 
 function comprovar(texte) {
     //Posar la solucio depenent de la dificultat
