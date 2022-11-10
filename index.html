@@ -21,7 +21,7 @@
         </div>
         <div id="setup-joc">
             <div id="diff">
-                <h3>Escull la dificultat </h3>
+                <h3>Tria la dificultat </h3>
                 <input id="dif1" type="radio" name="dif" value="facil" checked>
                 <label for="dif1">Facil</label>
                 <input id="dif2" type="radio" name="dif" value="intermig">
@@ -33,11 +33,19 @@
         <br><br>
         <button id="començar">Partida Nova</button>
     </header>
-    <br>
+    <div id="espai" class="hidden">
+    <br><br><br>
+    </div>
     <button id="chequeo" class="hidden">Comprovar</button>
     <button id="solucion" class="hidden">Autosolucionar</button>
-    <p id="resultat" class="hidden">Has guanyat!!!</p>
-    <br><br><br>
+    <br><br>
+    <div id="guanyar">
+        <h3 id="resultat" class="hidden">Has guanyat!!!</h3>
+    </div>
+    <br><br>
+    <div id="perder">
+    <h3 id="alerta" class="hidden">Has perdut!!</h3>
+    </div>
     <div id="joc">
         <div id="taula"></div>
     </div>

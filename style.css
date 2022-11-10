@@ -30,10 +30,9 @@ h1 {
 }
 
 #explicacio {
-    height: calc(10vh - 7px);
-    margin: 16px;
-    margin-left: 300px;
-    margin-right: 300px;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
     border-radius: 10px;
     background-color: white;
     font-size: 14pt;
@@ -87,6 +86,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(0,96,139,1) 100%)
 }
 
 #setup-joc > *{
+    justify-content: center;
     margin-bottom: 10px;
     margin-left: 30px;
     margin-right: 30px;
@@ -199,4 +199,45 @@ p.correct {
 .footer {
     background-color: lightgray;
     text-align: center;
+}
+
+#alerta{
+    color: red;
+    font-size: 30px;
+}
+
+#perder{
+    margin: auto;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 14pt;
+    font-family: 'Sudoku', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+}  
+
+#resultat{
+    color: green;
+    font-size: 30px;
+}
+
+#guanyar{
+    margin: auto;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 14pt;
+    font-family: 'Sudoku', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+}   
+
+
+#començar{
+    margin-left: 50px;
+}
+
+#chequeo{
+    margin-left: 40px;
 }

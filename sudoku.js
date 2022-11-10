@@ -32,6 +32,10 @@ function començarJoc() {
     //Mostrar el boto per comprovar
     id("chequeo").classList.remove("hidden");
     id("solucion").classList.remove("hidden");
+    id("alerta").classList.add("hidden");
+    id("resultat").classList.add("hidden");
+    id("espai").classList.remove("hidden");
+    id("solucion").disabled = false;
 }
 
 
@@ -71,7 +75,6 @@ function generarTaula(taula) {
                         setTimeout(function() {
                             quadre.classList.remove("correct");
                         }, 3000);
-                        
                         if (comprovarCompleta()) {
                             //treure classe hiden al resultat
                             id("resultat").classList.remove("hidden");
@@ -84,17 +87,17 @@ function generarTaula(taula) {
                     quadre.classList.remove("incorrect");
                 }
             });
+            id("solucion").addEventListener("click", function() {
+                let taulasolucio;
+                if (id("dif1").checked) taulasolucio = facil[1];
+                else if (id("dif2").checked) taulasolucio = intermig[1];
+                else taulasolucio = dificil[1];
+                netejarTaules();
+                generarTaula(taulasolucio);
+                id("alerta").classList.remove("hidden");
+                
+            });   
         }
-
-        id("solucion").addEventListener("click", function() {
-            let taulasolucio;
-            if (id("dif1").checked) taulasolucio = facil[1];
-            else if (id("dif2").checked) taulasolucio = intermig[1];
-            else taulasolucio = dificil[1];
-            netejarTaules();
-            generarTaula(taulasolucio);
-            
-        });
         
         //asignar id al quadre
         quadre.setAttribute("id", idCount);
@@ -140,14 +143,16 @@ function deseleccionarColumnaFila(quadre) {
 }
 
 function comprovarCompleta() {
-    //Si al clicar a comprovar tots els quadres estan correctes
+    //Comprovar que tots els quadres estiguin correctes menys els inicials
     for (let i = 0; i < 81; i++) {
         let quadre = id(i);
-        if (quadre.textContent == "") {
+        if (!quadre.classList.contains("quadreInic") && !quadre.classList.contains("correct")) {
             return false;
         }
     }
-    console.log("Has guanyat!!");
+    console.log("Has guanyat");
+    //desabilitar el boton de autosolucion
+    id("solucion").disabled = true;
     return true;
 }
 
