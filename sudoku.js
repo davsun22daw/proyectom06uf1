@@ -66,7 +66,7 @@ function generarTaula(taula) {
                 quadre.classList.add("quadreselected");
                 selectColumnaFila(quadre);
             });
-            id("chequeo").addEventListener("click", function() {
+            id("chequeo").addEventListener("dblclick", function() {
                 if (texte.value != "") {
                     if (comprovar(texte)) {
                         quadre.classList.add("correct");
@@ -87,7 +87,7 @@ function generarTaula(taula) {
                     quadre.classList.remove("incorrect");
                 }
             });
-            id("solucion").addEventListener("click", function() {
+            id("solucion").addEventListener("dblclick", function() {
                 let taulasolucio;
                 if (id("dif1").checked) taulasolucio = facil[1];
                 else if (id("dif2").checked) taulasolucio = intermig[1];

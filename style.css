@@ -39,6 +39,7 @@ h1 {
     font-family: 'Sudoku', sans-serif;
     text-shadow: 2px 2px 4px #000000;
     color: black;
+    border: 1px solid;
 }
 
 body {
@@ -165,7 +166,7 @@ input[type=text]{
 
 p.quadreInic {
     font-family: 'Sudoku', sans-serif;
-    background-color: lightgray !important;
+    background-color: lightgray;
 }
 
 input:disabled{
