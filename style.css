@@ -197,11 +197,6 @@ p.correct {
     border-bottom: 4px solid black;
 }
 
-.footer {
-    background-color: lightgray;
-    text-align: center;
-}
-
 #alerta{
     color: red;
     font-size: 30px;

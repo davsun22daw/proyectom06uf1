@@ -66,6 +66,7 @@ function generarTaula(taula) {
                 quadre.classList.add("quadreselected");
                 selectColumnaFila(quadre);
             });
+            //funció per comprovar l'estat
             id("chequeo").addEventListener("dblclick", function() {
                 if (texte.value != "") {
                     if (comprovar(texte)) {
@@ -87,6 +88,7 @@ function generarTaula(taula) {
                     quadre.classList.remove("incorrect");
                 }
             });
+            //funció per solucionar el sudoku
             id("solucion").addEventListener("dblclick", function() {
                 let taulasolucio;
                 if (id("dif1").checked) taulasolucio = facil[1];
