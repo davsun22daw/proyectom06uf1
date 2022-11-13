@@ -166,7 +166,7 @@ input[type=text]{
 
 p.quadreInic {
     font-family: 'Sudoku', sans-serif;
-    background-color: lightgray;
+    background-color: lightgray !important;
 }
 
 input:disabled{
